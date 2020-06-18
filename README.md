@@ -1,0 +1,21 @@
+## Phone parser lib
+
+#### Library usage
+```java
+Set<NumberRes> res = new PhoneGeneratorBuilder()
+    .with("00 30 697 111 11 11")
+	.skipGreekPhoneValidation(true).generate();
+	//NumberRes.getPhone() : String
+	//NumberRes.isValid() : boolean
+```
+
+### Compile and run tests
+```java
+git clone https://github.com/avraampiperidis/speechai.git
+cd speechai
+mvn compile
+mvn test
+//To run the demo Main class provided
+cd numberchecker
+mvn exec:java -Dexec.mainClass="com.omilia.it.runner.MainDemo"
+```
