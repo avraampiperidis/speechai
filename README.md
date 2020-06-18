@@ -19,3 +19,21 @@ mvn test
 cd numberchecker
 mvn exec:java -Dexec.mainClass="com.omilia.it.runner.MainDemo"
 ```
+
+### Standalone validators usage
+```java
+SimpleConstraintViolationException ex = new ValidationContext(new PhoneNumberValidator
+                .ValidateGreekPhoneNumber(null,"6559884"),ValidationContext.DispatchOnFail.YES)
+                .and(new PhoneNumberValidator
+                .ValidateGreekPhoneNumber(null,"5545sdfas555"))
+                .checkValidation();
+assertEquals(2,ex.getErrors().size());
+```
+
+####  Packages
+```java
+//for base usage
+com.omilia.it.core.*
+//for standalone validators
+com.omilia.it.validation.*
+```
