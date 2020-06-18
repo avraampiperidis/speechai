@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class PhoneGeneratorBuilder extends GeneratorBuilder {
     
     private String phone;
-    private boolean applyValidation;
+    private boolean skipValidation;
    
     @Override
     public PhoneGeneratorBuilder with(String phone) throws SimpleConstraintViolationException {
@@ -28,8 +28,8 @@ public class PhoneGeneratorBuilder extends GeneratorBuilder {
     }
     
     @Override
-    public PhoneGeneratorBuilder with(boolean applyValidation) {
-        this.applyValidation = applyValidation;
+    public PhoneGeneratorBuilder skipGreekPhoneValidation(boolean applyValidation) {
+        this.skipValidation = applyValidation;
         return this;
     }
     
@@ -41,7 +41,7 @@ public class PhoneGeneratorBuilder extends GeneratorBuilder {
                 .handleValidation();
         Set<NumberRes> nums = PhoneParser.phoneNumber(Utils.convertToBlocks(phone))
                 .stream().map(x -> new NumberRes(x)).collect(Collectors.toSet());
-        if(applyValidation) {
+        if(!skipValidation) {
             this.validate(nums);
         }
         return nums;

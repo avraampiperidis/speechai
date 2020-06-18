@@ -16,7 +16,7 @@ import java.util.Set;
 public abstract class GeneratorBuilder {    
     public abstract Object generate();
     public abstract GeneratorBuilder with(String val);
-    public abstract GeneratorBuilder with(boolean val);
+    public abstract GeneratorBuilder skipGreekPhoneValidation(boolean val);
     
     /**
      * General validations
