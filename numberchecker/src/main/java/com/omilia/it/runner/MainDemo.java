@@ -5,9 +5,6 @@
  */
 package com.omilia.it.runner;
 
-import com.omilia.it.core.GeneratorBuilder;
-import com.omilia.it.core.NumberRes;
-import com.omilia.it.core.PhoneGeneratorBuilder;
 import com.omilia.it.core.PhoneParser;
 import com.omilia.it.validation.core.SimpleConstraintViolationException;
 import com.omilia.it.validation.core.Utils;
@@ -25,20 +22,6 @@ public class MainDemo {
     
     
     public static void main(String[] a) {
-        
-         String phone1 = "69 73 00 13 40";
-         String phone2 = "0 0 30 69 71 22 4 254";
-//         
-//        GeneratorBuilder gen = new PhoneGeneratorBuilder()
-//                .skipGreekPhoneValidation(phone1).skipGreekPhoneValidation(true).generate()
-//        
-        Set<NumberRes> res = new PhoneGeneratorBuilder().with(phone2).skipGreekPhoneValidation(true).generate();
-        for(NumberRes n : res) {
-            System.out.println("p:"+n.getPhone()+","+n.isValid());
-        }
-        
-
-        //System.exit(0);
         System.out.println();
         System.out.println("||-----Welcome-----||");
         System.out.println("|>--Enter a phone number to run the program. OR type exit");

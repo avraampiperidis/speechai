@@ -31,15 +31,15 @@ public class PhoneGeneratorBuilderTest {
     @Test(expected = SimpleConstraintViolationException.class)
     @Parameters(source = Provider.class, method = "invalidPhoneProvider")
     public void testGenerateFail(String phone) {
-        this.service.with(phone).skipGreekPhoneValidation(true).generate();
+        this.service.with(phone).skipGreekPhoneValidation(false).generate();
     }
     
     
     @Test
     @Parameters(source = Provider.class, method = "phoneProvider")
     public void testGenerate(int results,String phone) {
-        Set<NumberRes> res = (Set<NumberRes>) this.service.with(phone).skipGreekPhoneValidation(true).generate();
+        Set<NumberRes> res = (Set<NumberRes>) this.service.with(phone).skipGreekPhoneValidation(false).generate();
         Assert.assertTrue(res.stream().anyMatch(x->x.isValid()));
     }
-    
+
 }
