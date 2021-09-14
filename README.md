@@ -1,5 +1,5 @@
 ## Phone parser lib
-[![Actions Status: tests](https://github.com/avraampiperidis/speechai/workflows/main/badge.svg)](https://github.com/avraampiperidis/speechai/actions?query=workflow%3A"tests")
+[![Actions Status](https://github.com/avraampiperidis/speechai/workflows/tests/badge.svg)](https://github.com/avraampiperidis/speechai/actions)
 
 #### Library usage
 ```java
