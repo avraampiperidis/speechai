@@ -1,5 +1,5 @@
 ## Phone parser lib
-![test status](https://github.com/avraampiperidis/speechai/actions/workflows/main/badge.svg)
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 #### Library usage
 ```java
 Set<NumberRes> res = new PhoneGeneratorBuilder()
